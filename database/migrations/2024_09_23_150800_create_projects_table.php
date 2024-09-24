@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name', 100);
             $table->string('slug')->unique();
-            $table->string('main_topic', 50);
+            $table->date('start_date');
             $table->string('repo_link');
             $table->text('description')->nullable();
             $table->timestamps();

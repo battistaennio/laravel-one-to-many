@@ -6,7 +6,7 @@
             <tr>
                 <th scope="col">ID</th>
                 <th scope="col">Nome Progetto</th>
-                <th scope="col">Argomento Principale</th>
+                <th scope="col">Data di inizio</th>
                 <th scope="col">Link Repository</th>
                 <th scope="col">Tools</th>
             </tr>
@@ -16,7 +16,7 @@
                 <tr>
                     <th scope="row">{{ $project->id }}</th>
                     <td>{{ $project->name }}</td>
-                    <td>{{ $project->main_topic }}</td>
+                    <td>{{ $project->start_date }}</td>
                     <td><a href="{{ $project->repo_link }}">Vai alla repo</a></td>
                     <td>
                         <a class="btn btn-success" title="Dettagli" href="{{ route('admin.projects.show', $project) }}">

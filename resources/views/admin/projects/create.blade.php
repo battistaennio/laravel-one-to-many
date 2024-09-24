@@ -25,11 +25,11 @@
             @enderror
         </div>
         <div class="mb-3">
-            <label for="main_topic" class="form-label">Argomento principale</label>
-            <input value="{{ old('main_topic') }}" name="main_topic" type="text"
-                class="form-control @error('main_topic') is-invalid @enderror" id="main_topic"
+            <label for="start_date" class="form-label">Data di inizio</label>
+            <input value="{{ old('start_date') }}" name="start_date" type="text"
+                class="form-control @error('start_date') is-invalid @enderror" id="start_date"
                 placeholder="aggiungi l'argomento principale">
-            @error('main_topic')
+            @error('start_date')
                 <small class="text-danger">*{{ $message }}</small>
             @enderror
 

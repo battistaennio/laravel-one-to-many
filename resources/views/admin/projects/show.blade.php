@@ -31,8 +31,8 @@
 
     <div class="row my-5 text-center">
         <div class="col-6">
-            <h3>Argomento principale:</h3>
-            <h5>{{ $project->main_topic }}</h5>
+            <h3>Data di inizio:</h3>
+            <h5>{{ $project->start_date }}</h5>
         </div>
 
         <div class="col-6">

@@ -23,7 +23,7 @@ class ProjectRequest extends FormRequest
     {
         return [
             'name' => 'required|min:3|max:100',
-            'main_topic' => 'required|min:3|max:50',
+            'start_date' => 'required|date|date_format:Y-m-d',
             'repo_link' => 'required'
         ];
     }
@@ -35,9 +35,9 @@ class ProjectRequest extends FormRequest
             'name.min' => 'Il campo "Nome Progetto" deve contenere almeno :min caratteri',
             'name.max' => 'Il campo "Nome Progetto" può contenere massimo :max caratteri',
 
-            'main_topic.required' => 'Il campo "Argomento Principale" è obbligatorio',
-            'main_topic.min' => 'Il campo "Argomento Principale" deve contenere almeno :min caratteri',
-            'main_topic.max' => 'Il campo "Argomento Principale" può contenere massimo :max caratteri',
+            'start_date.required' => 'Il campo "Data di inizio" è obbligatorio',
+            'start_date.date' => 'Il campo "Data di inizio" deve essere una data',
+            'start_date.date_format' => 'Il campo "Data di inizio" deve essere del formato YYYY-MM-GG (esempio 2024-01-01)',
 
             'repo_link.required' => 'Il campo "Link Repository" è obbligatorio',
         ];

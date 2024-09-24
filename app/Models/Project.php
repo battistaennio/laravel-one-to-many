@@ -12,7 +12,7 @@ class Project extends Model
     protected $fillable = [
         'name',
         'slug',
-        'main_topic',
+        'start_date',
         'repo_link',
         'description',
     ];
