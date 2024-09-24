@@ -19,6 +19,12 @@
         <a class="btn btn-warning" title="Modifica" href="{{ route('admin.projects.edit', $project) }}">
             <i class="fa-solid fa-pen"></i>
         </a>
+
+        @include('admin.partials.delete_form', [
+            'route' => route('admin.projects.destroy', $project),
+            'message' => "Sei sicuro di voler definitivamente eliminare questo progetto? Tutti i dati di $project->name verranno persi.",
+        ])
+
         <br>
         "<strong>{{ $project->name }}</strong>"
     </h1>
