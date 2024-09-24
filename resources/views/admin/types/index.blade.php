@@ -14,7 +14,7 @@
     @endif
 
 
-    <h2>Gestione categorie</h2>
+    <h2>Gestione tipo progetto</h2>
 
     <div class="row">
         <div class="col-4">
