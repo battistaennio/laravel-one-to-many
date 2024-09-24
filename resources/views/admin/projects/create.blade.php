@@ -24,6 +24,7 @@
                 <small class="text-danger">*{{ $message }}</small>
             @enderror
         </div>
+
         <div class="mb-3">
             <label for="start_date" class="form-label">Data di inizio</label>
             <input value="{{ old('start_date') }}" name="start_date" type="text"
@@ -32,8 +33,21 @@
             @error('start_date')
                 <small class="text-danger">*{{ $message }}</small>
             @enderror
-
         </div>
+
+        <div class="mb-3">
+            <label for="type_id" class="form-label">Progetto di tipo:</label>
+
+            <select name="type_id" class="form-select" aria-label="Default select example">
+                <option value="" selected>Seleziona il tipo</option>
+                @foreach ($types as $type)
+                    <option value="{{ $type->id }}" @if (old('type_id') == $type->id) selected @endif>
+                        {{ $type->name }}
+                    </option>
+                @endforeach
+            </select>
+        </div>
+
         <div class="mb-3">
             <label for="repo_link" class="form-label">Link repository</label>
 
@@ -47,7 +61,6 @@
             @error('repo_link')
                 <small class="text-danger">*{{ $message }}</small>
             @enderror
-
         </div>
 
         <div class="mb-3">

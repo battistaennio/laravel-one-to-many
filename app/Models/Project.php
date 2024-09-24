@@ -20,5 +20,6 @@ class Project extends Model
         'start_date',
         'repo_link',
         'description',
+        'type_id'
     ];
 }
