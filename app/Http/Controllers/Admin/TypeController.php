@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Functions\Helper;
 use App\Http\Controllers\Controller;
 use App\Models\Type;
 use Illuminate\Http\Request;
@@ -13,7 +14,9 @@ class TypeController extends Controller
      */
     public function index()
     {
-        //
+        $types = Type::all();
+
+        return view('admin.types.index', compact('types'));
     }
 
     /**
@@ -29,7 +32,13 @@ class TypeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+
+        $data['slug'] = Helper::generateSlug($data['name'], Type::class);
+
+        $type = Type::create($data);
+
+        return redirect()->route('admin.types.index', compact('type'));
     }
 
     /**
@@ -51,17 +60,25 @@ class TypeController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Type $type)
     {
-        //
+        $data = $request->all();
+
+        $data['slug'] = Helper::generateSlug($data['name'], Type::class);
+
+        $type->update($data);
+
+        return redirect()->route('admin.types.index');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Type $type)
     {
-        //
+        $type->delete();
+
+        return redirect()->route('admin.types.index')->with('delete', 'Elemento eliminato correttamente');
     }
 
     public function typeProjects()

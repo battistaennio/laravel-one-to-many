@@ -30,10 +30,10 @@ Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(
 
     //tutte le rotte protette da middleware
     Route::get('/', [DashboardController::class, 'index'])->name('home');
+    Route::get('type-projects', [TypeController::class, 'typeProjects'])->name('typeProjects');
     //rotte CRUD
     Route::resource('projects', ProjectController::class);
-
-    Route::get('type-projects', [TypeController::class, 'typeProjects'])->name('typeProjects');
+    Route::resource('types', TypeController::class);
 });
 
 require __DIR__ . '/auth.php';

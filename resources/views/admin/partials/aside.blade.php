@@ -12,5 +12,8 @@
         <li>
             <a href="{{ route('admin.typeProjects') }}"><i class="fa-solid fa-layer-group"></i> Progetti per tipo</a>
         </li>
+        <li>
+            <a href="{{ route('admin.types.index') }}"><i class="fa-solid fa-pen-to-square"></i> Gestione categorie</a>
+        </li>
     </ul>
 </aside>
