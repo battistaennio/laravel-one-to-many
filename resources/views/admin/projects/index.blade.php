@@ -17,7 +17,7 @@
                 <tr>
                     <th scope="row">{{ $project->id }}</th>
                     <td>{{ $project->name }}</td>
-                    <td>{{ $project->type->name }}</td>
+                    <td>{{ $project->type?->name }}</td>
                     <td>{{ date('d/m/Y', strtotime($project->start_date)) }}</td>
                     <td><a href="{{ $project->repo_link }}">Vai alla repo</a></td>
                     <td>

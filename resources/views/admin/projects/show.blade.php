@@ -25,7 +25,7 @@
 
         <div class="col-6">
             <h3>Progetto di tipo:</h3>
-            <h5>{{ $project->type->name }}</h5>
+            <h5>{{ $project->type ? $project->type->name : 'tipo non disponibile' }}</h5>
         </div>
     </div>
 
