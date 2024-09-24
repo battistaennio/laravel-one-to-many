@@ -9,5 +9,8 @@
         <li>
             <a href="{{ route('admin.projects.create') }}"><i class="fa-solid fa-plus"></i> Nuovo Progetto</a>
         </li>
+        <li>
+            <a href="{{ route('admin.typeProjects') }}"><i class="fa-solid fa-layer-group"></i> Progetti per tipo</a>
+        </li>
     </ul>
 </aside>
