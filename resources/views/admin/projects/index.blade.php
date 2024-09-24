@@ -1,6 +1,14 @@
 @extends('layouts.app')
 
+
 @section('content')
+    @if (session('delete_confirm'))
+        <div class="alert alert-success" role="alert">
+            {{ session('delete_confirm') }}
+        </div>
+    @endif
+
+
     <table class="table">
         <thead>
             <tr>
