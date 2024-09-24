@@ -24,8 +24,8 @@
         </div>
 
         <div class="col-6">
-            <h3>Slug:</h3>
-            <h5>{{ $project->slug }}</h5>
+            <h3>Progetto di tipo:</h3>
+            <h5>{{ $project->type->name }}</h5>
         </div>
     </div>
 
@@ -45,6 +45,13 @@
         <h3>Descrizione:</h3>
         <div class="col">
             <h5>{{ $project->description }}</h5>
+        </div>
+    </div>
+
+    <div class="row my-5 text-center">
+        <h3>Slug:</h3>
+        <div class="col">
+            <h5>{{ $project->slug }}</h5>
         </div>
     </div>
 
