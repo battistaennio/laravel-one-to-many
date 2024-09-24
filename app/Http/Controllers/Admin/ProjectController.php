@@ -56,7 +56,9 @@ class ProjectController extends Controller
      */
     public function edit(Project $project)
     {
-        return view('admin.projects.edit', compact('project'));
+        $types = Type::all();
+
+        return view('admin.projects.edit', compact('project', 'types'));
     }
 
     /**
@@ -68,6 +70,10 @@ class ProjectController extends Controller
 
         if ($data['name'] != $project->name) {
             $data['slug'] = Helper::generateSlug($data['name'], Project::class);
+        }
+
+        if ($data['type_id'] != $project->id) {
+            $data['slug'] = Helper::generateSlug($data['type_id'], Type::class);
         }
 
         $project->update($data);
@@ -82,6 +88,6 @@ class ProjectController extends Controller
     {
         $project->delete();
 
-        return redirect(route('admin.projects.index'))->with('delete_confirm', 'Progetto "' . $project->title . '" eliminato correttamente');
+        return redirect(route('admin.projects.index'))->with('delete_confirm', 'Progetto "' . $project->name . '" eliminato correttamente');
     }
 }
