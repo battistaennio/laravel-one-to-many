@@ -16,7 +16,7 @@
                 <tr>
                     <th scope="row">{{ $project->id }}</th>
                     <td>{{ $project->name }}</td>
-                    <td>{{ $project->start_date }}</td>
+                    <td>{{ date('d/m/Y', strtotime($project->start_date)) }}</td>
                     <td><a href="{{ $project->repo_link }}">Vai alla repo</a></td>
                     <td>
                         <a class="btn btn-success" title="Dettagli" href="{{ route('admin.projects.show', $project) }}">
