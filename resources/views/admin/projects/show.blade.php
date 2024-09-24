@@ -7,6 +7,12 @@
         </div>
     @endif
 
+    @if (session('create_confirm'))
+        <div class="alert alert-success" role="alert">
+            {{ session('create_confirm') }}
+        </div>
+    @endif
+
 
     <h1 class="text-center">
         Dettaglio progetto
