@@ -1,11 +1,18 @@
 @extends('layouts.app')
 
 @section('content')
-    @if (session('delete'))
+    @if (session('delete_confirm'))
         <div class="alert alert-success" role="alert">
-            {{ session('delete') }}
+            {{ session('delete_confirm') }}
         </div>
     @endif
+
+    @if (session('edit_confirm'))
+        <div class="alert alert-success" role="alert">
+            {{ session('edit_confirm') }}
+        </div>
+    @endif
+
 
     <h2>Gestione categorie</h2>
 
@@ -15,7 +22,7 @@
             <form class="d-flex justify-content-between" action="{{ route('admin.types.store') }}" method="post">
                 @csrf
 
-                <input type="text" name="name" class="form-control" placeholder="Nuovo tipo">
+                <input type="text" name="name" class="form-control" placeholder="Aggiungi tipo">
                 <button class="btn btn-success">Invia</button>
             </form>
 

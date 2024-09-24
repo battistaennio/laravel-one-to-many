@@ -68,7 +68,7 @@ class TypeController extends Controller
 
         $type->update($data);
 
-        return redirect()->route('admin.types.index');
+        return redirect()->route('admin.types.index')->with('edit_confirm', 'Elemento aggiornato!');
     }
 
     /**
@@ -78,7 +78,7 @@ class TypeController extends Controller
     {
         $type->delete();
 
-        return redirect()->route('admin.types.index')->with('delete', 'Elemento eliminato correttamente');
+        return redirect()->route('admin.types.index')->with('delete_confirm', 'Elemento eliminato correttamente');
     }
 
     public function typeProjects()
