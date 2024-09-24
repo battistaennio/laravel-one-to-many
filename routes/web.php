@@ -33,7 +33,7 @@ Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(
     Route::get('type-projects', [TypeController::class, 'typeProjects'])->name('typeProjects');
     //rotte CRUD
     Route::resource('projects', ProjectController::class);
-    Route::resource('types', TypeController::class);
+    Route::resource('types', TypeController::class)->except(['show', 'edit', 'create']);
 });
 
 require __DIR__ . '/auth.php';
