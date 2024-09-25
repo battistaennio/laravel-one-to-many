@@ -19,7 +19,7 @@
         <div class="mb-3">
             <label for="name" class="form-label">Nome progetto</label>
             <input value="{{ old('name') }}" name="name" type="text"
-                class="form-control @error('name') is-invalid @enderror" id="name" placeholder="aggiungi il nome">
+                class="form-control @error('name') is-invalid @enderror" id="name" placeholder="Inserisci il nome">
             @error('name')
                 <small class="text-danger">*{{ $message }}</small>
             @enderror
@@ -29,7 +29,7 @@
             <label for="start_date" class="form-label">Data di inizio</label>
             <input value="{{ old('start_date') }}" name="start_date" type="text"
                 class="form-control @error('start_date') is-invalid @enderror" id="start_date"
-                placeholder="aggiungi l'argomento principale">
+                placeholder="Inserisci la data di inizio del progetto">
             @error('start_date')
                 <small class="text-danger">*{{ $message }}</small>
             @enderror
@@ -55,7 +55,7 @@
 
                 <input value="{{ old('repo_link') }}" name="repo_link" type="text"
                     class="form-control input-group @error('repo_link') is-invalid @enderror" id="repo_link"
-                    placeholder="aggiungi il link della repository">
+                    placeholder="Inserisci il link della repository">
             </div>
 
             @error('repo_link')
@@ -65,7 +65,7 @@
 
         <div class="mb-3">
             <label for="description" class="form-label">Descrizione</label>
-            <textarea name="description" class="form-control" id="description" placeholder="aggiungi la descrizione">{{ old('description') }}</textarea>
+            <textarea name="description" class="form-control" id="description" placeholder="Inserisci la descrizione">{{ old('description') }}</textarea>
         </div>
 
 
