@@ -13,6 +13,18 @@
         </div>
     @endif
 
+    @if (session('error'))
+        <div class="alert alert-danger" role="alert">
+            {{ session('error') }}
+        </div>
+    @endif
+
+    @if (session('success'))
+        <div class="alert alert-success" role="alert">
+            {{ session('success') }}
+        </div>
+    @endif
+
 
     <h2>Gestione tipo progetto</h2>
 
@@ -22,7 +34,7 @@
             <form class="d-flex justify-content-between" action="{{ route('admin.types.store') }}" method="post">
                 @csrf
 
-                <input type="text" name="name" class="form-control" placeholder="Aggiungi tipo">
+                <input type="text" name="name" class="form-control me-2" placeholder="Aggiungi tipo">
                 <button class="btn btn-success">Invia</button>
             </form>
 

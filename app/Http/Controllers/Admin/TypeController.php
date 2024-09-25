@@ -32,13 +32,20 @@ class TypeController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->all();
+        $exists = Type::where('name', $request->name)->first();
 
-        $data['slug'] = Helper::generateSlug($data['name'], Type::class);
+        if (!$exists) {
 
-        $type = Type::create($data);
+            $data = $request->all();
 
-        return redirect()->route('admin.types.index', compact('type'));
+            $data['slug'] = Helper::generateSlug($data['name'], Type::class);
+
+            $type = Type::create($data);
+
+            return redirect()->route('admin.types.index', compact('type'))->with('success', 'Tipo aggiunto correttamente');
+        } else {
+            return redirect()->route('admin.types.index')->with('error', 'Tipo già presente nel database');
+        }
     }
 
     /**
